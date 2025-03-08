@@ -29,9 +29,11 @@ public class Flipkart {
 	public static void main(String[] args) throws InterruptedException, AWTException {
 		WebDriverManager.edgedriver().setup();
 		WebDriver d = new EdgeDriver();
+
 		d.manage().window().maximize();
 		d.manage().window().minimize();
 		d.navigate().forward();	
+
 		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		d.get("https://www.amazon.in");
 		d.findElement(By.xpath("//a[contains(text(),'Today')]")).click();
